@@ -102,6 +102,7 @@ public class MainFrame extends JFrame{
                       fontStyle=Font.BOLD +Font.ITALIC ;break;
               }
               if(result==JOptionPane.OK_CANCEL_OPTION){
+                 // UIManager.put("Menu.font ",new Font(jtf1.getText(),fontStyle,Integer.parseInt()));
               }
 
           }
