@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class LoginFrame extends JFrame{
     private  JLabel jlID= new JLabel("ID:");
     private  JLabel jlPW= new JLabel("Password:");
-    private  JTextField jfID= new JTextField();
+    private  JTextField jfID= new JTextField("h304");
     private JPasswordField jpfPW =new JPasswordField();
     private JButton jbExit =new JButton("Exit");
     private JButton jbLogin =new JButton("Login");
@@ -24,6 +24,7 @@ public class LoginFrame extends JFrame{
         initComp();
     }
     private  void initComp(){
+
         this.setBounds((screenW-frmW)/2,(screenH-frmH)/2,frmW,frmH);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Container cp;
@@ -42,9 +43,13 @@ public class LoginFrame extends JFrame{
                     MainFrame mf =new MainFrame(LoginFrame.this);
                     mf.setVisible(true);
                     LoginFrame.this.setVisible(false);
-                    dispose();
+                    jfID.setText("");
+                    jpfPW.setText("");
+
                 }else {
-                    JOptionPane.showMessageDialog(LoginFrame.this,"Error"+"\nID : "+jfID.getText()+"\nPassword : "+new String(jpfPW.getPassword()));
+                    JOptionPane.showMessageDialog(LoginFrame.this,
+                            "Error"+"\nID : "+jfID.getText()
+                            +"\nPassword : "+new String(jpfPW.getPassword()));
 
 
 
